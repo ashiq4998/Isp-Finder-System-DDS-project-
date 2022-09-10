@@ -1,0 +1,60 @@
+clear screen;
+
+DROP TABLE IspName CASCADE CONSTRAINTS;
+DROP TABLE Branches CASCADE CONSTRAINTS;
+DROP TABLE Packagee CASCADE CONSTRAINTS;
+DROP TABLE Price CASCADE CONSTRAINTS;
+DROP TABLE PeakHour CASCADE CONSTRAINTS;
+
+
+CREATE TABLE IspName (
+	IspID int, 
+	IspName varchar2(20),  
+        PRIMARY KEY(IspID));
+		
+
+CREATE TABLE Branches (
+	LocationID int, 
+	IspID int,
+	Address varchar2(20), 
+	OfficeHour varchar2(20), 
+        PRIMARY KEY(LocationID));
+	);
+		
+		
+CREATE TABLE Packagee (
+	PackageID int, 
+	IspID int,
+	Packagee varchar2(20), 
+	Speed varchar2(20), 
+        PRIMARY KEY(PackageID));
+	);
+		
+	
+	
+insert into IspName(IspID, IspName) VALUES (1,'Amber IT');
+insert into IspName(IspID, IspName) VALUES (2,'Exord');
+insert into IspName(IspID, IspName) VALUES (3,'Reign ICT');
+insert into IspName(IspID, IspName) VALUES (4,'Ontorongo');
+insert into IspName(IspID, IspName) VALUES (5,'Precia Online');
+
+
+insert into Branches(LocationID, IspID, Address, OfficeHour) VALUES (1, 1, 'Banasree', '9AM-10PM');
+insert into Branches(LocationID, IspID, Address, OfficeHour) VALUES (2, 2, 'Gulshan', '9AM-10PM');
+insert into Branches(LocationID, IspID, Address, OfficeHour) VALUES (3, 3, 'Modhubagh', '9AM-9PM');
+insert into Branches(LocationID, IspID, Address, OfficeHour) VALUES (4, 4, 'Khilgaon', '10AM-9PM');
+insert into Branches(LocationID, IspID, Address, OfficeHour) VALUES (5, 5, 'Rampura', '9AM-10PM');
+
+
+insert into Packagee(PackageID, IspID, Packagee, Speed) VALUES (1, 2, 'Basic', '5MBPS');
+insert into Packagee(PackageID, IspID, Packagee, Speed) VALUES (2, 1, 'Bronze', '6MBPS');
+insert into Packagee(PackageID, IspID, Packagee, Speed) VALUES (3, 3, 'Silver', '8MBPS');
+insert into Packagee(PackageID, IspID, Packagee, Speed) VALUES (4, 5, 'Gold', '10MBPS');
+insert into Packagee(PackageID, IspID, Packagee, Speed) VALUES (5, 4, 'Platinum', '11MBPS');
+insert into Packagee(PackageID, IspID, Packagee, Speed) VALUES (6, 2, 'Radient', '20MBPS');
+
+
+
+commit;
+
+
